@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiedler Family Farmer LLC - Pure Magnesium Carbonate & Grass-Fed Beef</title>
+    <meta name="description" content="Clean, simple nutrition from Fiedler Family Farmer. Pure magnesium carbonate for athletes and premium ground beef with ingredients you can pronounce.">
+    <meta name="keywords" content="magnesium carbonate, grass-fed beef, clean nutrition, no chemicals, Gen Z food, climbing chalk, workout supplements">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Fiedler Family Farmer LLC - Clean Nutrition You Can Trust">
+    <meta property="og:description" content="Pure magnesium carbonate and premium ground beef. If you can't pronounce it, we don't use it.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fiedlerfamilyfarmer.com">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d5a27;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #2d5a27;
+        }
+        
+        .cart-btn {
+            background: #2d5a27;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: #e55a2b;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .products h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d5a27;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2d5a27;
+        }
+        
+        .product-card p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+        
+        .add-to-cart {
+            background: #2d5a27;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            width: 100%;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d5a27;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        /* Admin Panel */
+        .admin-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 200;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .admin-panel h3 {
+            margin-bottom: 1rem;
+            color: #2d5a27;
+            font-size: 1rem;
+        }
+        
+        .admin-control {
+            margin-bottom: 1rem;
+        }
+        
+        .admin-control label {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .admin-control input, .admin-control select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        
+        .admin-control input[type="color"] {
+            height: 40px;
+        }
+        
+        .toggle-admin {
+            position: fixed;
+            top: 20px;
+            right: 280px;
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 201;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .admin-panel {
+                right: 10px;
+                width: 200px;
+            }
+            
+            .toggle-admin {
+                right: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-admin" onclick="toggleAdmin()">⚙️ Admin</button>
+    
+    <div class="admin-panel hidden" id="adminPanel">
+        <h3>🛠️ Site Settings</h3>
+        
+        <div class="admin-control">
+            <label for="heroTitle">Hero Title:</label>
+            <input type="text" id="heroTitle" value="Clean Nutrition You Can Trust">
+        </div>
+        
+        <div class="admin-control">
+            <label for="heroSubtitle">Hero Subtitle:</label>
+            <input type="text" id="heroSubtitle" value="If you can't pronounce it, we don't use it">
+        </div>
+        
+        <div class="admin-control">
+            <label for="primaryColor">Primary Color:</label>
+            <input type="color" id="primaryColor" value="#2d5a27">
+        </div>
+        
+        <div class="admin-control">
+            <label for="accentColor">Accent Color:</label>
+            <input type="color" id="accentColor" value="#ff6b35">
+        </div>
+        
+        <div class="admin-control">
+            <label for="magPrice">Magnesium Price:</label>
+            <input type="text" id="magPrice" value="$24.99">
+        </div>
+        
+        <div class="admin-control">
+            <label for="beefPrice">Beef Price:</label>
+            <input type="text" id="beefPrice" value="$5.99/lb">
+        </div>
+        
+        <div class="admin-control">
+            <label for="theme">Theme:</label>
+            <select id="theme">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+    </div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">Fiedler Family Farmer</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cart-btn" onclick="alert('Cart functionality coming soon!')">🛒 Cart (0)</button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1 id="heroTitleDisplay">Clean Nutrition You Can Trust</h1>
+            <p id="heroSubtitleDisplay">If you can't pronounce it, we don't use it</p>
+            <a href="#products" class="cta-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">🧗‍♂️</div>
+                    <h3>Pure Magnesium Carbonate</h3>
+                    <p>Perfect for climbing, weightlifting, and gymnastics. Just pure magnesium carbonate - nothing else.</p>
+                    <div class="price" id="magPriceDisplay">$24.99</div>
+                    <button class="add-to-cart" onclick="addToCart('magnesium')">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">🥩</div>
+                    <h3>Premium Ground Beef</h3>
+                    <p>Locally sourced, hormone-free ground beef. Fresh from farms you can trust.</p>
+                    <div class="price" id="beefPriceDisplay">$5.99/lb</div>
+                    <button class="add-to-cart" onclick="addToCart('beef')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fiedler Family Farmer LLC. Clean nutrition, simple ingredients.</p>
+        </div>
+    </footer>
+
+    <script>
+        let cartItems = [];
+        let adminVisible = false;
+
+        function toggleAdmin() {
+            const panel = document.getElementById('adminPanel');
+            adminVisible = !adminVisible;
+            panel.classList.toggle('hidden');
+        }
+
+        function addToCart(product) {
+            cartItems.push(product);
+            const cartBtn = document.querySelector('.cart-btn');
+            cartBtn.textContent = `🛒 Cart (${cartItems.length})`;
+            
+            // Simple notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: #2d5a27;
+                color: white;
+                padding: 1rem;
+                border-radius: 5px;
+                z-index: 1000;
+            `;
+            notification.textContent = `${product} added to cart!`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 2000);
+        }
+
+        // Admin controls
+        document.getElementById('heroTitle').addEventListener('input', function(e) {
+            document.getElementById('heroTitleDisplay').textContent = e.target.value;
+        });
+
+        document.getElementById('heroSubtitle').addEventListener('input', function(e) {
+            document.getElementById('heroSubtitleDisplay').textContent = e.target.value;
+        });
+
+        document.getElementById('primaryColor').addEventListener('input', function(e) {
+            const color = e.target.value;
+            document.documentElement.style.setProperty('--primary-color', color);
+            
+            // Update all elements with primary color
+            const elements = document.querySelectorAll('.logo, .hero, footer, .add-to-cart');
+            elements.forEach(el => {
+                if (el.classList.contains('logo')) {
+                    el.style.color = color;
+                } else {
+                    el.style.backgroundColor = color;
+                }
+            });
+        });
+
+        document.getElementById('accentColor').addEventListener('input', function(e) {
+            const color = e.target.value;
+            const elements = document.querySelectorAll('.cta-btn, .price');
+            elements.forEach(el => {
+                if (el.classList.contains('cta-btn')) {
+                    el.style.backgroundColor = color;
+                } else {
+                    el.style.color = color;
+                }
+            });
+        });
+
+        document.getElementById('magPrice').addEventListener('input', function(e) {
+            document.getElementById('magPriceDisplay').textContent = e.target.value;
+        });
+
+        document.getElementById('beefPrice').addEventListener('input', function(e) {
+            document.getElementById('beefPriceDisplay').textContent = e.target.value;
+        });
+
+        document.getElementById('theme').addEventListener('change', function(e) {
+            if (e.target.value === 'dark') {
+                document.body.style.backgroundColor = '#1a1a1a';
+                document.body.style.color = 'white';
+            } else {
+                document.body.style.backgroundColor = '#f8f9fa';
+                document.body.style.color = '#333';
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
