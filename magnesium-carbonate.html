@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Magnesium Carbonate - Fiedler Family Farmer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background-color: #f7fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #2f5233;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .cart-btn {
+            background: #8b4513;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Product Section */
+        .product-container {
+            padding: 3rem 0;
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .product-image-section {
+            text-align: center;
+        }
+
+        .product-image {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            margin: 0 auto 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .product-thumbnails {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            background: #e2e8f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .thumbnail.active {
+            border-color: #2f5233;
+        }
+
+        .product-details {
+            padding: 2rem;
+        }
+
+        .breadcrumb {
+            color: #718096;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #2f5233;
+            text-decoration: none;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2f5233;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-description {
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .product-features {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .product-features h3 {
+            color: #2f5233;
+            margin-bottom: 1rem;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: #2f5233;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .quantity-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quantity-label {
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .quantity-input {
+            width: 80px;
+            padding: 0.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .add-to-cart-btn {
+            background: linear-gradient(135deg, #2f5233 0%, #38a169 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #2f5233;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-image {
+                width: 300px;
+                height: 300px;
+                font-size: 6rem;
+            }
+
+            .product-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Fiedler Family Farmer</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cart-btn" onclick="viewCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+        </nav>
+    </header>
+
+    <main class="product-container">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="#products">Products</a> / Pure Magnesium Carbonate
+            </div>
+
+            <div class="product-layout">
+                <div class="product-image-section">
+                    <div class="product-image">
+                        🧗‍♂️
+                    </div>
+                    <div class="product-thumbnails">
+                        <div class="thumbnail active">🧗‍♂️</div>
+                        <div class="thumbnail">⚪</div>
+                        <div class="thumbnail">📦</div>
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <h1 class="product-title">Pure Magnesium Carbonate</h1>
+                    <div class="product-price">$24.99</div>
+                    
+                    <p class="product-description">
+                        Premium quality magnesium carbonate perfect for climbing, weightlifting, and gymnastics. 
+                        Our product contains absolutely nothing but pure magnesium carbonate - no additives, 
+                        no fillers, no chemicals you can't pronounce.
+                    </p>
+
+                    <div class="product-features">
+                        <h3>Key Features</h3>
+                        <ul class="features-list">
+                            <li>100% Pure Magnesium Carbonate</li>
+                            <li>Perfect for Rock Climbing & Gymnastics</li>
+                            <li>Superior Grip Enhancement</li>
+                            <li>Food Grade Quality</li>
+                            <li>No Additives or Fillers</li>
+                            <li>Environmentally Friendly</li>
+                        </ul>
+                    </div>
+
+                    <div class="quantity-section">
+                        <label class="quantity-label">Quantity:</label>
+                        <input type="number" class="quantity-input" value="1" min="1" id="quantity">
+                    </div>
+
+                    <button class="add-to-cart-btn" onclick="addToCart()">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fiedler Family Farmer LLC. Clean nutrition, simple ingredients.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+
+        function addToCart() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const product = {
+                id: 'magnesium-carbonate',
+                name: 'Pure Magnesium Carbonate',
+                price: 24.99,
+                quantity: quantity,
+                image: '🧗‍♂️'
+            };
+
+            // Check if product already exists in cart
+            const existingItem = cart.find(item => item.id === product.id);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+
+            // Show notification
+            alert(`Added ${quantity} Pure Magnesium Carbonate to cart!`);
+        }
+
+        function viewCart() {
+            // For now, just show alert. Later we'll implement a proper cart page
+            if (cart.length === 0) {
+                alert('Your cart is empty');
+            } else {
+                const cartSummary = cart.map(item => 
+                    `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`
+                ).join('\n');
+                alert('Cart Contents:\n' + cartSummary);
+            }
+        }
+
+        // Initialize cart count on page load
+        updateCartCount();
+
+        // Thumbnail click functionality
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                document.querySelector('.thumbnail.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

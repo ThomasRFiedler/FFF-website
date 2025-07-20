@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiedler Family Farmer T-Shirt - Fiedler Family Farmer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background-color: #f7fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #2f5233;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .cart-btn {
+            background: #8b4513;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Product Section */
+        .product-container {
+            padding: 3rem 0;
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .product-image-section {
+            text-align: center;
+        }
+
+        .product-image {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            margin: 0 auto 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .product-thumbnails {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            background: #c6f6d5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .thumbnail.active {
+            border-color: #2f5233;
+        }
+
+        .product-details {
+            padding: 2rem;
+        }
+
+        .breadcrumb {
+            color: #718096;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #2f5233;
+            text-decoration: none;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2f5233;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-description {
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .product-features {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .product-features h3 {
+            color: #2f5233;
+            margin-bottom: 1rem;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: #2f5233;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .option-section {
+            margin-bottom: 2rem;
+        }
+
+        .option-label {
+            font-weight: 500;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .option-grid {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .option-item {
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .option-item.selected {
+            border-color: #2f5233;
+            background: #f0fff4;
+            color: #2f5233;
+            font-weight: 600;
+        }
+
+        .option-item:hover {
+            border-color: #2f5233;
+        }
+
+        .color-option {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: relative;
+            border: 3px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .color-option.selected {
+            border-color: #2f5233;
+            transform: scale(1.1);
+        }
+
+        .color-option::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .color-option.selected::after {
+            opacity: 1;
+        }
+
+        .color-white { background: #ffffff; }
+        .color-black { background: #000000; }
+        .color-green { background: #2f5233; }
+        .color-brown { background: #8b4513; }
+        .color-gray { background: #718096; }
+
+        .quantity-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quantity-label {
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .quantity-input {
+            width: 80px;
+            padding: 0.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .add-to-cart-btn {
+            background: linear-gradient(135deg, #2f5233 0%, #38a169 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .total-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-align: center;
+            padding: 1rem;
+            background: #f0fff4;
+            border-radius: 8px;
+            border: 2px solid #c6f6d5;
+        }
+
+        /* Footer */
+        footer {
+            background: #2f5233;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-image {
+                width: 300px;
+                height: 300px;
+                font-size: 6rem;
+            }
+
+            .product-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .option-grid {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Fiedler Family Farmer</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cart-btn" onclick="viewCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+        </nav>
+    </header>
+
+    <main class="product-container">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="#products">Products</a> / Fiedler Family Farmer T-Shirt
+            </div>
+
+            <div class="product-layout">
+                <div class="product-image-section">
+                    <div class="product-image">
+                        👕
+                    </div>
+                    <div class="product-thumbnails">
+                        <div class="thumbnail active">👕</div>
+                        <div class="thumbnail">🌱</div>
+                        <div class="thumbnail">📦</div>
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <h1 class="product-title">Fiedler Family Farmer T-Shirt</h1>
+                    <div class="product-price">$24.99</div>
+                    
+                    <p class="product-description">
+                        Represent clean nutrition and sustainable farming with our premium cotton t-shirt. 
+                        Featuring our signature "Clean Nutrition You Can Trust" design, this comfortable 
+                        tee is perfect for everyday wear or working in the garden.
+                    </p>
+
+                    <div class="product-features">
+                        <h3>Product Features</h3>
+                        <ul class="features-list">
+                            <li>100% Premium Cotton</li>
+                            <li>Pre-Shrunk & Fade Resistant</li>
+                            <li>Eco-Friendly Printing</li>
+                            <li>Comfortable Unisex Fit</li>
+                            <li>Machine Washable</li>
+                            <li>Print-on-Demand (Sustainable)</li>
+                        </ul>
+                    </div>
+
+                    <div class="option-section">
+                        <label class="option-label">Size:</label>
+                        <div class="option-grid">
+                            <div class="option-item" data-size="XS">XS</div>
+                            <div class="option-item" data-size="S">S</div>
+                            <div class="option-item selected" data-size="M">M</div>
+                            <div class="option-item" data-size="L">L</div>
+                            <div class="option-item" data-size="XL">XL</div>
+                            <div class="option-item" data-size="XXL">XXL</div>
+                        </div>
+                    </div>
+
+                    <div class="option-section">
+                        <label class="option-label">Color:</label>
+                        <div class="option-grid">
+                            <div class="color-option color-white selected" data-color="White" title="White"></div>
+                            <div class="color-option color-black" data-color="Black" title="Black"></div>
+                            <div class="color-option color-green" data-color="Forest Green" title="Forest Green"></div>
+                            <div class="color-option color-brown" data-color="Earth Brown" title="Earth Brown"></div>
+                            <div class="color-option color-gray" data-color="Heather Gray" title="Heather Gray"></div>
+                        </div>
+                    </div>
+
+                    <div class="quantity-section">
+                        <label class="quantity-label">Quantity:</label>
+                        <input type="number" class="quantity-input" value="1" min="1" id="quantity">
+                    </div>
+
+                    <div class="total-price" id="total-price">
+                        Total: $24.99
+                    </div>
+
+                    <button class="add-to-cart-btn" onclick="addToCart()">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fiedler Family Farmer LLC. Clean nutrition, simple ingredients.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let selectedSize = 'M';
+        let selectedColor = 'White';
+        const basePrice = 24.99;
+        
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+
+        function updateTotalPrice() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const total = (basePrice * quantity).toFixed(2);
+            document.getElementById('total-price').textContent = `Total: ${total}`;
+        }
+
+        function addToCart() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const product = {
+                id: `tshirt-${selectedSize}-${selectedColor.toLowerCase().replace(' ', '-')}`,
+                name: `Fiedler Family Farmer T-Shirt (${selectedSize}, ${selectedColor})`,
+                price: basePrice,
+                quantity: quantity,
+                image: '👕',
+                size: selectedSize,
+                color: selectedColor
+            };
+
+            // Check if product already exists in cart
+            const existingItem = cart.find(item => item.id === product.id);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+
+            // Show notification
+            alert(`Added ${quantity} x ${selectedSize} ${selectedColor} T-Shirt to cart!`);
+        }
+
+        function viewCart() {
+            // For now, just show alert. Later we'll implement a proper cart page
+            if (cart.length === 0) {
+                alert('Your cart is empty');
+            } else {
+                const cartSummary = cart.map(item => 
+                    `${item.name} x${item.quantity} - ${(item.price * item.quantity).toFixed(2)}`
+                ).join('\n');
+                alert('Cart Contents:\n' + cartSummary);
+            }
+        }
+
+        // Initialize cart count and price on page load
+        updateCartCount();
+        updateTotalPrice();
+
+        // Size selection functionality
+        document.querySelectorAll('[data-size]').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelector('[data-size].selected').classList.remove('selected');
+                this.classList.add('selected');
+                selectedSize = this.dataset.size;
+            });
+        });
+
+        // Color selection functionality
+        document.querySelectorAll('[data-color]').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelector('[data-color].selected').classList.remove('selected');
+                this.classList.add('selected');
+                selectedColor = this.dataset.color;
+            });
+        });
+
+        // Quantity change listener
+        document.getElementById('quantity').addEventListener('input', updateTotalPrice);
+
+        // Thumbnail click functionality
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                document.querySelector('.thumbnail.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
