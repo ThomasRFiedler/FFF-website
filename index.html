@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiedler Family Farmer LLC - Pure Magnesium Carbonate & Grass-Fed Beef</title>
+    <meta name="description" content="Clean, simple nutrition from Fiedler Family Farmer. Pure magnesium carbonate for athletes and premium ground beef with ingredients you can pronounce.">
+    <meta name="keywords" content="magnesium carbonate, grass-fed beef, clean nutrition, no chemicals, Gen Z food, climbing chalk, workout supplements">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Fiedler Family Farmer LLC - Clean Nutrition You Can Trust">
+    <meta property="og:description" content="Pure magnesium carbonate and premium ground beef. If you can't pronounce it, we don't use it.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fiedlerfamilyfarmer.com">
+    <meta property="og:image" content="/assets/images/og-homepage.jpg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        /* Homepage specific styles */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, #4a7c59 100%);
+            color: var(--white);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.06)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+            color: var(--white);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            margin-bottom: var(--spacing-md);
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .hero-tagline {
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            background: var(--secondary-brown);
+            color: var(--white);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: 8px;
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+        
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+        
+        .cta-btn.secondary:hover {
+            background: var(--white);
+            color: var(--primary-green);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: var(--spacing-xl) 0;
+            background: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .section-title {
+            font-size: var(--font-size-4xl);
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .section-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .product-card {
+            background: var(--background);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto var(--spacing-md);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+        
+        .product-image.supplements {
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+        }
+        
+        .product-image.meat {
+            background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+        }
+        
+        .product-image.apparel {
+            background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
+        }
+        
+        .product-card h3 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-xs);
+            color: var(--primary-green);
+        }
+        
+        .product-card .price {
+            font-size: var(--font-size-xl);
+            font-weight: bold;
+            color: var(--secondary-brown);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .product-card p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .product-link {
+            display: inline-block;
+            background: var(--primary-green);
+            color: var(--white);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .product-link:hover {
+            background: #1a3d1f;
+            transform: translateY(-1px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: var(--spacing-xl) 0;
+            background: linear-gradient(135deg, #f0fff4 0%, #f7fafc 100%);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: var(--font-size-3xl);
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .about-text p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+        }
+        
+        .feature-text {
+            font-weight: 500;
+            color: var(--primary-green);
+        }
+        
+        .about-image {
+            background: linear-gradient(135deg, var(--light-green) 0%, #9ae6b4 100%);
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+        }
+        
+        /* Newsletter Section */
+        .newsletter {
+            padding: var(--spacing-xl) 0;
+            background: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-sm);
+            color: var(--white);
+        }
+        
+        .newsletter p {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: var(--spacing-sm);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: var(--spacing-sm);
+            border: none;
+            border-radius: 6px;
+            font-size: var(--font-size-base);
+        }
+        
+        .newsletter-btn {
+            background: var(--secondary-brown);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-btn:hover {
+            background: #6d3410;
+        }
+        
+        /* Admin Panel Toggle */
+        .admin-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary-brown);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: 6px;
+            cursor: pointer;
+            z-index: 200;
+            font-size: var(--font-size-sm);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .admin-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Admin Toggle Button -->
+    <button class="admin-toggle" onclick="window.open('/admin/index.html', '_blank')">
+        ⚙️ Admin
+    </button>
+
+    <header>
+        <nav class="container">
+            <div class="logo">Fiedler Family Farmer</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cart-btn" onclick="navigateToCart()">
+                🛒 Cart (<span data-cart-count>0</span>)
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Clean Nutrition You Can Trust</h1>
+                <p class="hero-subtitle">Premium products with simple, honest ingredients</p>
+                <p class="hero-tagline">"If you can't pronounce it, we don't use it"</p>
+                <div class="cta-buttons">
+                    <a href="#products" class="cta-btn">Shop Now</a>
+                    <a href="#about" class="cta-btn secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Products</h2>
+                <p class="section-subtitle">
+                    Carefully selected products that meet our strict standards for purity and quality.
+                    Every item is chosen with your health and performance in mind.
+                </p>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Magnesium Carbonate -->
+                <div class="product-card">
+                    <div class="product-image supplements">🧗‍♂️</div>
+                    <h3>Pure Magnesium Carbonate</h3>
+                    <div class="price">$24.99</div>
+                    <p>Perfect for climbing, weightlifting, and gymnastics. 200g of pure magnesium carbonate with no additives or fillers.</p>
+                    <a href="pages/products/magnesium-carbonate.html" class="product-link">View Details</a>
+                </div>
+                
+                <!-- Ground Beef -->
+                <div class="product-card">
+                    <div class="product-image meat">🥩</div>
+                    <h3>Premium Ground Beef</h3>
+                    <div class="price">$5.99/lb</div>
+                    <p>Locally sourced, hormone-free ground beef from grass-fed cattle. Fresh ground daily, 1-pound packages.</p>
+                    <a href="pages/products/ground-beef.html" class="product-link">View Details</a>
+                </div>
+                
+                <!-- T-Shirt -->
+                <div class="product-card">
+                    <div class="product-image apparel">👕</div>
+                    <h3>FFF T-Shirt</h3>
+                    <div class="price">$24.99</div>
+                    <p>Premium cotton t-shirt featuring our "Clean Nutrition You Can Trust" design. Available in multiple sizes and colors.</p>
+                    <a href="pages/products/t-shirt.html" class="product-link">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose Fiedler Family Farmer?</h2>
+                    <p>
+                        We believe in radical transparency when it comes to nutrition. Every product we offer 
+                        meets our strict "pronounceable ingredients" standard - if you can't pronounce it, 
+                        we don't use it.
+                    </p>
+                    <p>
+                        From our pure magnesium carbonate for athletes to our locally-sourced ground beef, 
+                        we're committed to providing clean, simple nutrition that you can trust.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">No Hidden Ingredients</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🌱</span>
+                            <span class="feature-text">Locally Sourced</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🔬</span>
+                            <span class="feature-text">Third-Party Tested</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">♻️</span>
+                            <span class="feature-text">Sustainable Practices</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    🌾
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="contact">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Get notified about new products and exclusive offers from Fiedler Family Farmer</p>
+            <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                <input 
+                    type="email" 
+                    class="newsletter-input" 
+                    placeholder="Enter your email address"
+                    required
+                >
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fiedler Family Farmer LLC. Clean nutrition, simple ingredients.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Homepage specific JavaScript
+        function handleNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // For now, just show success message
+            // Later: integrate with email service like Mailchimp
+            if (window.FFF && window.FFF.cart) {
+                window.FFF.cart.showNotification(`Thanks for subscribing with ${email}!`, 'success');
+            } else {
+                alert(`Thanks for subscribing with ${email}!`);
+            }
+            
+            event.target.reset();
+        }
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe product cards and other elements
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.product-card, .about-content, .feature-item').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Add CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .product-card, .about-content, .feature-item {
+                opacity: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

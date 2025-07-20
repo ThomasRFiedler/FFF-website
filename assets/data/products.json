@@ -1,0 +1,142 @@
+{
+  "products": [
+    {
+      "id": "magnesium-carbonate",
+      "name": "Pure Magnesium Carbonate",
+      "slug": "magnesium-carbonate",
+      "price": 14.99,
+      "category": "supplements",
+      "description": "Premium quality magnesium carbonate perfect for climbing, weightlifting, and gymnastics. Our product contains absolutely nothing but pure magnesium carbonate - no additives, no fillers, no chemicals you can't pronounce. Packaged in convenient 200g bags.",
+      "shortDescription": "Perfect for climbing, weightlifting, and gymnastics. Just pure magnesium carbonate - nothing else.",
+      "features": [
+        "100% Pure Magnesium Carbonate",
+        "Perfect for Rock Climbing & Gymnastics",
+        "Superior Grip Enhancement",
+        "Food Grade Quality",
+        "No Additives or Fillers",
+        "Environmentally Friendly",
+        "200g Resealable Bag"
+      ],
+      "image": "🧗‍♂️",
+      "images": ["🧗‍♂️", "⚪", "📦"],
+      "inStock": true,
+      "weight": "200g (7.05 oz)",
+      "dimensions": "4x4x2 inches",
+      "storageInstructions": "Store in a cool, dry place. Keep container tightly closed.",
+      "seo": {
+        "title": "Pure Magnesium Carbonate 200g - Premium Climbing Chalk",
+        "metaDescription": "Premium quality magnesium carbonate for climbing, weightlifting, and gymnastics. 200g bag, 100% pure, no additives. Order from Fiedler Family Farmer today.",
+        "keywords": "magnesium carbonate, climbing chalk, gymnastics chalk, weightlifting grip, pure chalk, 200g"
+      }
+    },
+    {
+      "id": "ground-beef",
+      "name": "Premium Ground Beef (1 lb)",
+      "slug": "ground-beef",
+      "price": 7.99,
+      "priceUnit": " per lb",
+      "category": "meat",
+      "description": "Locally sourced, hormone-free ground beef from farms you can trust. Our cattle are grass-fed and pasture-raised, resulting in superior flavor and nutritional value. Fresh ground daily and never frozen. Sold in convenient 1-pound packages.",
+      "shortDescription": "Locally sourced, hormone-free ground beef. Fresh from farms you can trust.",
+      "features": [
+        "100% Grass-Fed & Pasture-Raised",
+        "No Hormones or Antibiotics",
+        "Locally Sourced from Trusted Farms",
+        "Fresh Ground Daily",
+        "Superior Flavor & Nutrition",
+        "Environmentally Sustainable",
+        "1 lb Package"
+      ],
+      "image": "🥩",
+      "images": ["🥩", "🐄", "📦"],
+      "inStock": true,
+      "weight": "1 lb (16 oz)",
+      "storageInstructions": "Keep refrigerated at 40°F or below. Use within 2 days of purchase or freeze for up to 3 months.",
+      "seo": {
+        "title": "Premium Grass-Fed Ground Beef 1lb - Locally Sourced",
+        "metaDescription": "Fresh, hormone-free ground beef from local grass-fed cattle. No antibiotics, superior nutrition and flavor. 1lb package from Fiedler Family Farmer.",
+        "keywords": "grass-fed beef, ground beef, hormone-free meat, local beef, pasture-raised cattle, 1 pound"
+      }
+    },
+    {
+      "id": "t-shirt",
+      "name": "Fiedler Family Farmer T-Shirt",
+      "slug": "t-shirt",
+      "price": 24.99,
+      "category": "apparel",
+      "description": "Represent clean nutrition and sustainable farming with our premium cotton t-shirt. Featuring our signature \"Clean Nutrition You Can Trust\" design, this comfortable tee is perfect for everyday wear or working in the garden. Printed on-demand via Printify for sustainability.",
+      "shortDescription": "Premium cotton t-shirt with our signature \"Clean Nutrition You Can Trust\" design.",
+      "features": [
+        "100% Premium Cotton",
+        "Pre-Shrunk & Fade Resistant",
+        "Eco-Friendly Printing",
+        "Comfortable Unisex Fit",
+        "Machine Washable",
+        "Print-on-Demand (Sustainable)",
+        "Ships from Printify"
+      ],
+      "image": "👕",
+      "images": ["👕", "🌱", "📦"],
+      "inStock": true,
+      "options": {
+        "size": [
+          {"value": "XS", "label": "XS"},
+          {"value": "S", "label": "S"},
+          {"value": "M", "label": "M", "default": true},
+          {"value": "L", "label": "L"},
+          {"value": "XL", "label": "XL"},
+          {"value": "XXL", "label": "XXL"}
+        ],
+        "color": [
+          {"value": "white", "label": "White", "hex": "#ffffff", "default": true},
+          {"value": "black", "label": "Black", "hex": "#000000"},
+          {"value": "forest-green", "label": "Forest Green", "hex": "#2f5233"},
+          {"value": "earth-brown", "label": "Earth Brown", "hex": "#8b4513"},
+          {"value": "heather-gray", "label": "Heather Gray", "hex": "#718096"}
+        ]
+      },
+      "careInstructions": "Machine wash cold, tumble dry low, iron inside out if needed.",
+      "shippingInfo": "Ships within 3-5 business days via Printify fulfillment network.",
+      "seo": {
+        "title": "Fiedler Family Farmer T-Shirt - Clean Nutrition Design",
+        "metaDescription": "Premium cotton t-shirt featuring our \"Clean Nutrition You Can Trust\" design. Comfortable, sustainable, and perfect for everyday wear. Printed on-demand.",
+        "keywords": "fiedler family farmer shirt, clean nutrition tshirt, sustainable farming apparel, organic cotton shirt, printify"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "supplements",
+      "name": "Supplements",
+      "description": "Pure, clean supplements with ingredients you can pronounce"
+    },
+    {
+      "id": "meat",
+      "name": "Fresh Meat",
+      "description": "Locally sourced, hormone-free meat from trusted farms"
+    },
+    {
+      "id": "apparel",
+      "name": "Apparel",
+      "description": "Comfortable clothing that represents our clean nutrition values"
+    }
+  ],
+  "siteInfo": {
+    "name": "Fiedler Family Farmer",
+    "tagline": "Clean Nutrition You Can Trust",
+    "description": "If you can't pronounce it, we don't use it",
+    "email": "hello@fiedlerfamilyfarmer.com",
+    "phone": "(555) 123-4567",
+    "address": {
+      "street": "123 Farm Road",
+      "city": "Farmville",
+      "state": "IN",
+      "zip": "12345"
+    },
+    "social": {
+      "facebook": "https://facebook.com/fiedlerfamilyfarmer",
+      "instagram": "https://instagram.com/fiedlerfamilyfarmer",
+      "twitter": "https://twitter.com/fiedlerfarm"
+    }
+  }
+}
